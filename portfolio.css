@@ -458,52 +458,71 @@ section .education {
     height: 35vh;
     top: 40%;
 }
-
+#skills-container-box{
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    bottom:340%;
+    left: 55%;
+    width: 130%;
+    height: 75vh;
+    justify-items: center;
+    /* background-color: #c2ff613b; */
+    align-items: center;
+    border-radius: 10px;
+}
+#frontend{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    /* background-color: #0d917b63; */
+    position: absolute;
+    top: 0%;
+    height: 40vh;
+    width: 100%;
+}
 #hexagon2 {
     background-color: #c2ff61;
-    position: relative;
-    bottom: 340%;
-    left: 97%;
+    position: absolute;
+    top: 0%;
+    left: 31%;
 }
 
 #hexagon3 {
-    background-color: #0d917b;
+    background-color: rgba(6, 199, 247, 0.692);
     position: relative;
-    bottom: 390%;
-    left: 65%;
+    top: 25%;
+    left: 4%;
 }
 
 #hexagon4 {
     background-color: #ff61bd;
     position: relative;
-    bottom: 490%;
-    right: -128%;
+    top: 25%;
+    left: 23%;
 }
 #soft-skills-container {
     position: relative;
-    left: 96.5%;
-    bottom: 540%;
-    width: 100px;
-    height: 100px;
+    top: 6%;
+    left: 12%;
+    justify-items: center;
+    /* background-color: #22222252; */
 }
 #soft-skills-border {
     width: 2px;
     height: 6vh;
     border: #333 solid 2px;
-    position: relative;
-    left: 55%;
-    bottom: 0%;
+
 }
 #soft-skills-list{
     background-color: #ff61bd;
     padding: 20px;
     border-radius: 10px;
     text-align: justify;
-    position: relative;
-    left: -80%;
+
     height: 28vh;
-    width: 290%;
-    bottom: 6%;
+
 }
 #soft-skills-list ul li{
     font-size: 1.2rem;
@@ -517,8 +536,8 @@ section .education {
     aspect-ratio: 1/cos(30deg);
     clip-path: polygon(50% -50%, 200% 150%, 50% 150%, 60 50%);
     margin-left: 9%;
-    position: relative;
-    top: 20%;
+    /* position: relative;
+    top: 20%; */
 
 }
 .skills:hover {
