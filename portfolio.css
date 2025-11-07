@@ -252,6 +252,19 @@ section .education {
     transition: 0.3s;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
+.education-details h2 {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.education-details h3 {
+    background: linear-gradient(to right, #084bc9, #c2bae0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
 
 #skills-container {
     height: 95vh;
