@@ -239,7 +239,9 @@ section .education {
   top: 35%;
   left: 4%;
 }
-
+#education1{
+  display: none;
+}
 #education {
   position: relative;
   font-size: 6rem;
@@ -1302,15 +1304,16 @@ transform: rotate(90deg);
 
 }
 
-@media screen and (min-width: 1381px) and (max-width: 1366px) {
+@media screen and (min-width: 1400px)  {
   #frameworks-container {
     right: 11.4%;
   }
 
   #hexagon1 {
-    top: 3%;
-    left: 39%;
-  }
+ position: relative;
+  top: 5%;
+  z-index: 1;
+ }
 
   #hexagon2 {
     top: 5%;
