@@ -4,14 +4,25 @@
   box-sizing: border-box;
 
 }
-
+:root {
+  --bg1: #0e141b; /* main background */
+  --bg2: #1b2836; /* secondary shade */
+  --card-bg: #1f2d3d; /* card surface */
+  --accent1: #00c2a8; /* teal accent */
+  --accent2: #8a63d2; /* violet accent */
+  --accent3: #1ea1f1; /* blue accent */
+  --text-primary: #e4ebf5;
+  --text-muted: #9aa6b2;
+  --border: rgba(255, 255, 255, 0.08);
+}
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  flex-wrap: wrap;
+  font-family: 'Inter', 'Poppins', sans-serif;
+  background: linear-gradient(180deg, var(--bg1), var(--bg2));
+  color: var(--text-primary);
 }
 
 nav {
@@ -19,9 +30,9 @@ nav {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: whitesmoke;
+   background-color: rgba(20, 28, 39, 0.95);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   padding: 15px 0;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   z-index: 1000;
 }
 
@@ -42,7 +53,7 @@ nav {
 
 .nav-details li a {
   text-decoration: none;
-  color: #333;
+  color: var(--text-muted);
   font-weight: 600;
   position: relative;
   font-size: 18px;
@@ -57,14 +68,14 @@ nav {
   bottom: -4px;
   width: 0%;
   height: 3px;
-  background: linear-gradient(90deg, #007bff, #00c896);
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
   transition: width 0.3s ease;
   border-radius: 5px;
 }
 
 /* Hover effect */
 .nav-details li a:hover {
-  color: #007bff;
+  color: var(--accent3);
 }
 
 .nav-details li a:hover::after {
@@ -76,6 +87,8 @@ header {
   height: 97vh;
   position: relative;
   overflow: hidden;
+    background: radial-gradient(circle at 70% 40%, #1f2d3d 0%, #0e141b 90%);
+
 }
 
 .main-pic img {
@@ -86,7 +99,7 @@ header {
   top: 17%;
   border-radius: 50% 60% 50% 60%;
   object-fit: cover;
-  box-shadow: 0 18px 40px rgba(12, 35, 45, 0.12);
+  box-shadow: 0 18px 40px rgba(20, 139, 218, 0.5);
   transform: translateY(6px);
   animation: mypic 1s ease-out forwards;
 }
@@ -105,7 +118,7 @@ header {
   opacity: 0;
   animation: name 1s ease-out forwards;
   font-size: clamp(2.2rem, 5vw + 1rem, 5rem);
-  background: linear-gradient(to left, #910d5e, #007bbf);
+ background: linear-gradient(to left, var(--accent1), var(--accent2));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 600;
@@ -123,7 +136,7 @@ header {
   font-weight: 700;
   position: absolute;
   left: 60%;
-  top: 35%;
+  top: 32%;
   transform: translateY(-30px);
   opacity: 0;
   animation: surname 1s ease-out forwards;
@@ -145,20 +158,25 @@ header {
   top: 55%;
   left: 40%;
   width: 55%;
+   background: linear-gradient(145deg, #1a2432, #121a24);
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
 }
 
 #about-me h3 {
   font-size: 2.5rem;
+  padding: 0px 10px;
   font-weight: 600;
   margin-bottom: 20px;
-  color: rgba(9, 135, 194, 0.719);
+  color: var(--accent3);
 }
 
 #about-me p {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   line-height: 1.2;
+  padding: 0px 10px;
   text-align: justify;
-  color: #333;
+  color: var(--text-muted);
   opacity: 0;
   text-wrap: wrap;
   transform: translateY(30px);
@@ -176,9 +194,6 @@ section {
   margin-top: 3%;
   height: 99.4vh;
   position: relative;
-
-
-
 }
 
 .circle,
@@ -238,6 +253,8 @@ section .education {
   position: absolute;
   top: 35%;
   left: 4%;
+  color: var(--text-muted);
+
 }
 #education1{
   display: none;
@@ -263,10 +280,10 @@ section .education {
 }
 
 .education-details {
-  background-color: #ffffff;
   border-radius: 20px;
   padding: 2px 0px 1px 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.582);
+ background-color: var(--card-bg);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
 
 .education-details:hover {
@@ -276,17 +293,16 @@ section .education {
 }
 
 .education-details h2 {
-  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  background: linear-gradient(135deg, var(--accent1), var(--accent2));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .education-details h3 {
-  background: linear-gradient(to right, #084bc9, #c2bae0);
+  background: linear-gradient(to right, var(--accent3), var(--accent1));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
 
 
 #skills-container {
@@ -317,6 +333,13 @@ section .education {
   padding: 5%;
 }
 
+.inner-circle,
+#rectangle-container,
+.skills-inner-circle {
+  border: 2px solid var(--border);
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
 .skills-section {
   position: relative;
   left: 80%;
@@ -449,23 +472,22 @@ section .education {
 }
 
 .core-concepts {
-  background: linear-gradient(135deg, #ffbd61, #ffe49b);
+  background: linear-gradient(135deg, var(--accent1), var(--accent2));
+  color:rgb(232, 235, 240);
   border: none;
   height: 10vh;
   width: 100%;
   border-radius: 8px;
-  padding: 8px 5px;
+  padding: 15px 5px 5px 5px;
   text-align: center;
   font-size: 1.5rem;
   font-weight: 600;
-  color: #333;
-  box-shadow: 0 6px 20px rgba(255, 189, 97, 0.4);
   transition: 0.3s ease;
 }
 
 .core-concepts:hover {
   transform: translateY(-5px);
-  background: linear-gradient(135deg, #ffcf71, #ffb347);
+  background: linear-gradient(135deg, #7173ff, #409de9);
   box-shadow: 0 10px 25px rgba(255, 170, 80, 0.4);
 }
 
@@ -494,13 +516,13 @@ section .education {
 #framework-skills ul,
 #soft-skills-list ul {
   list-style-type: square;
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 #core-skills ul li,
 #framework-skills ul li {
   font-size: 1.2rem;
-  color: #141414;
+  color: #f5e5e5;
   padding: 10px;
   transition: 0.3s;
 }
@@ -511,7 +533,11 @@ section .education {
   border-radius: 8px;
   transform: translateX(8px);
 }
-
+#hexagon1 { background: linear-gradient(135deg, var(--accent3), var(--accent1)); }
+#hexagon2 { background: linear-gradient(135deg, var(--accent1), var(--accent2)); }
+#hexagon3 { background: linear-gradient(135deg, #00b3ff, var(--accent2)); }
+#hexagon4 { background: linear-gradient(135deg, #f59e0b, #ef4444); }
+#hexagon5 { background: linear-gradient(135deg, #a78bfa, #6366f1); }
 /* ===== Frameworks Section ===== */
 #frameworks-container {
   width: 70%;
@@ -522,7 +548,8 @@ section .education {
 }
 
 .frameworks {
-  background: linear-gradient(135deg, #0d917b, #00bfa5);
+ background: linear-gradient(135deg, var(--accent2), var(--accent3));
+  color: rgb(222, 232, 241);
   border: none;
   height: 8vh;
   border-radius: 8px;
@@ -530,15 +557,14 @@ section .education {
   text-align: center;
   font-size: 1.5rem;
   font-weight: 600;
-  color: #181717c2;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
   transition: 0.3s ease;
 }
 
 .frameworks:hover {
   transform: translateY(-5px);
-  background: linear-gradient(135deg, #00c6a9, #008b74);
-  box-shadow: 0 12px 25px rgba(0, 191, 165, 0.3);
+  background: linear-gradient(135deg, #7173ff, #409de9);
+    box-shadow: 0 12px 25px rgba(0, 191, 165, 0.3);
 }
 
 #frameworks-border {
@@ -550,7 +576,8 @@ section .education {
 }
 
 #framework-skills {
-  background: linear-gradient(135deg, #c2ff61, #99e265);
+  background: linear-gradient(135deg, #223044, #1a2432);
+  color: var(--text-primary);
   padding: 20px;
   border-radius: 10px;
   text-align: justify;
@@ -586,18 +613,17 @@ section .education {
 }
 
 #soft-skills-list {
-  background: linear-gradient(135deg, #ff61bd, #ff99cc);
-  padding: 20px;
+ background: linear-gradient(135deg, #2d3b52, #1a2432);
+  color: var(--text-primary);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);  padding: 20px;
   border-radius: 10px;
   text-align: justify;
   height: 28vh;
-  color: #0c0c0c;
-  box-shadow: 0 8px 25px rgba(255, 97, 189, 0.3);
+
 }
 
 #soft-skills-list ul li {
   font-size: 1.2rem;
-  color: #111010;
   padding: 4px 5px;
   transition: 0.3s ease;
 }
@@ -614,7 +640,7 @@ section .education {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #333;
+  color: #f3ebeb;
 }
 
 .projects-info:hover,
@@ -637,7 +663,7 @@ section .education {
 #project-section {
   min-height: 100vh;
   text-align: center;
-  background: linear-gradient(135deg, #ffffff, #f0f9ff);
+  background: linear-gradient(135deg, #101820, #192534);
   padding: 60px 20px;
 }
 
@@ -663,9 +689,10 @@ section .education {
   width: 30%;
   height: 40vh;
   /* kept same as your original */
-  background: #fff;
+   background: #1f2d3d;
+  color: var(--text-primary);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
   border-radius: 18px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -677,6 +704,8 @@ section .education {
   transform: translateY(-10px);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
 }
+
+
 
 /* ---- Image ---- */
 .projects-info a {
@@ -690,7 +719,8 @@ section .education {
 .images {
   width: 100%;
   height: 100%;
-  /* object-fit: cover; */
+  display: block;
+  object-fit: cover;
   border-radius: 18px 18px 0 0;
   transition: transform 0.4s ease;
 }
@@ -701,25 +731,37 @@ section .education {
 
 /* ---- Project Name ---- */
 .projects-info p {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 600;
   color: #0d917b;
   padding: 12px 10px;
-  background: #f9f9f9;
+  background: #e9e2e2;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 0 0 18px 18px;
   text-align: center;
   transition: color 0.3s ease;
+}
+.projects-info:hover {
+  box-shadow: 0 12px 30px rgba(0, 194, 168, 0.35);
 }
 
 .projects-info:hover p {
   color: #007bbf;
 }
 
-
+.projects-info img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  display: block;
+  border-radius: 18px 18px 0 0; 
+  transition: transform 0.4s ease;
+}
 #contact-section {
   min-height: 100vh;
-  background: linear-gradient(135deg, #ffffff, #e8f6ff);
+  background: linear-gradient(135deg, #101820, #1b2836);
+    color: var(--text-primary);
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -736,7 +778,10 @@ section .education {
   position: relative;
   top: 15%;
 }
+.contact-header p{
+    color: var(--text-muted);
 
+}
 #contact {
   font-size: 3.5rem;
   color: #0d917b;
@@ -764,9 +809,9 @@ section .education {
 
 /* ---- Individual Cards ---- */
 .contact-card {
-  background: #fff;
+  background: var(--card-bg);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
   border-radius: 15px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
   padding: 20px;
@@ -788,7 +833,7 @@ section .education {
   justify-content: center;
   align-items: center;
   margin-right: 20px;
-  background: linear-gradient(135deg, #0d917b, #007bbf);
+  background: linear-gradient(135deg, var(--accent1), var(--accent3));
   padding: 8px;
   transition: all 0.4s ease;
 }
@@ -808,13 +853,13 @@ section .education {
 /* ---- Text ---- */
 .info h3 {
   font-size: 1.3rem;
-  color: #0d917b;
+  color: var(--accent1);
   font-weight: 600;
   margin-bottom: 5px;
 }
 
 .info p {
-  color: #444;
+  color: var(--text-muted);
   font-size: 1.1rem;
 }
 
@@ -827,7 +872,7 @@ section .education {
 
 .contact-footer h4 {
   font-size: 1.4rem;
-  color: #333;
+  color: var(--text-muted);
   margin-top: 20px;
   font-weight: 600;
 }
@@ -850,7 +895,7 @@ section .education {
 
 .social img:hover {
   transform: scale(1.15);
-  box-shadow: 0 0 20px rgba(13, 145, 123, 0.6);
+  box-shadow: 0 0 20px var(--accent1);
 }
 
 /* ---- Animations ---- */
@@ -979,7 +1024,7 @@ section .education {
   }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 768px) {
   .nav-details {
     width: 100%;
     display: flex;
@@ -1192,38 +1237,44 @@ transform: rotate(90deg);
     left: 0%;
   }
 
-  #frontend,
-  #hexagon5 {
-    display: flex;
-    transform: rotate(270deg);
-    position: absolute;
-    top: 15%;
-    left: 20%;
-  }
+ #frontend,
+#soft-skills-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  top: 5%;
+  left: 0;
+  transform: none;
+}
 
-  #sql,
-  #css,
-  #html,
-  #soft-skils {
-    transform: rotate(90deg);
-  }
+#frontend{
+  position: relative;
+  top: 18%;
+}
+  
 
   #soft-skills-container {
     display: flex;
     flex-direction: row;
     position: relative;
-    left: 50%;
+    left: 35%;
     top: 18%;
   }
 
-  /* hexagon 2 is rotated
-  so left means bottom, top means left*/
+
   #hexagon2 {
-    left: 32%;
-    top: 13%;
+    left: 82%;
+    top: 28%;
   }
   #hexagon3 #html{
     font-size: 0.9rem;
+    
+  }
+  #hexagon4{
+    top: -18%;
+    left: 82%;
   }
   #hexagon5 {
     position: absolute;
@@ -1304,37 +1355,41 @@ transform: rotate(90deg);
 
 }
 
+
 @media screen and (min-width: 1400px)  {
   #frameworks-container {
     right: 11.4%;
   }
 
   #hexagon1 {
- position: relative;
   top: 5%;
+  left: 39%;
   z-index: 1;
  }
 
   #hexagon2 {
-    top: 5%;
+    top: 6%;
     left: 30%;
   }
 
   #hexagon3 {
-    top: 25%;
+    top: 25.4%;
     left: 5.7%;
   }
 
   #hexagon4 {
     top: 27%;
-    left: 18.4%;
+    left: 19%;
   }
 
   #hexagon5 {
     top: 25%;
     left: 33%;
   }
-
+#soft-skills-container{
+  top: 5%;
+  left: 11.5%;
+}
   #skills-container-box {
     top: 2%;
     left: 100%;
