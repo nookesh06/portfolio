@@ -5,13 +5,13 @@
 
 }
 :root {
-  --bg1: #0e141b; /* main background */
-  --bg2: #1b2836; /* secondary shade */
-  --card-bg: #1f2d3d; /* card surface */
-  --accent1: #00c2a8; /* teal accent */
-  --accent2: #8a63d2; /* violet accent */
-  --accent3: #1ea1f1; /* blue accent */
-  --text-primary: #e4ebf5;
+  --bg1: #0e141b; /*background*/
+  --bg2: #1b2836; 
+  --card-bg: #1f2d3d; /*cards*/
+  --accent1: #00c2a8; /*buttons, links*/
+  --accent2: #8a63d2;
+  --accent3: #1ea1f1; 
+  --text-primary: #e4ebf5;/*text*/
   --text-muted: #9aa6b2;
   --border: rgba(255, 255, 255, 0.08);
 }
@@ -82,13 +82,10 @@ nav {
   width: 100%;
 }
 
-
 header {
   height: 97vh;
   position: relative;
   overflow: hidden;
-    background: radial-gradient(circle at 70% 40%, #1f2d3d 0%, #0e141b 90%);
-
 }
 
 .main-pic img {
@@ -189,7 +186,11 @@ header {
     transform: translateY(0);
   }
 }
-
+#about-me:hover{
+  transform: translateY(-5px);
+  transition: 0.4s;
+  box-shadow: 0 9px 20px rgba(20, 139, 218, 0.5);
+}
 section {
   margin-top: 3%;
   height: 99.4vh;
@@ -959,9 +960,7 @@ section .education {
   #contact {
     font-size: 2.5rem;
   }
-  #emailid{
-  font-size: 0.6rem;
-}
+ 
 }
 
 @media (max-width: 576px) {
@@ -1002,8 +1001,9 @@ section .education {
     font-size: 2.2rem;
   }
   #emailid{
-  font-size: 0.5rem;
-}
+    word-break: break-all;
+  }
+
 }
 
 @media (max-width: 400px) {
